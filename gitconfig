@@ -1,0 +1,38 @@
+[core]
+    editor = vim
+    filemode = false
+	autoclrf = true
+	autocrlf = input
+[user]
+    name = Darren Shipley
+    email = darren.shipley@arivo.com
+	signingkey = 1
+[color]
+    ui = auto
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    ignore = update-index --assume-unchanged
+    watch = update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]" --color
+    co = checkout
+
+[merge]
+	tool = kdiff3
+    renamelimit = 3000
+[commit]
+	verbose = true
+	gpgsign = true
+
+[url "git@bitbucket.org:"]
+    insteadOf = https://bitbucket.org
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/
+
+[checkout]
+    defaultRemote=origin
+[init]
+	defaultBranch = main
+[rebase]
+	autosquash = true
+[gpg]
+	program = gpg
