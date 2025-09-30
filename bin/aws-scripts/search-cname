@@ -1,0 +1,3 @@
+#!/bin/bash
+
+aws route53 list-hosted-zones | jq '.HostedZones[].Id' | xargs -L1 -I'{}' aws route53 list-resource-record-sets --hosted-zone-id {} | jq '.ResourceRecordSets[] | select(.Type=="CNAME") | select(.ResourceRecords[].Value|contains("'"$1"'"))'

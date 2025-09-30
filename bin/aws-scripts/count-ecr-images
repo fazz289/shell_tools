@@ -1,0 +1,3 @@
+#!/bin/bash
+
+aws ecr list-images --repository-name $1 | jq '.imageIds | unique_by(.imageDigest) | length'

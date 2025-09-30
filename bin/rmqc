@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+exec rabbitmqadmin --host $RABBITMQ_HOST --port 443 --ssl -u "$RABBITMQ_USER" -p "$RABBITMQ_PASSWORD" $@
+
